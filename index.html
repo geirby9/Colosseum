@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KE4H Colosseum Project</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">KE4H Colosseum</div>
+    <nav class="menu">
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#project1">Project 1</a>
+      <a href="#sparql">SPARQL</a>
+      <a href="#rdf">RDF</a>
+      <a href="#project2">Project 2</a>
+      <a href="#llms">LLMs</a>
+      <a href="#evaluation">Evaluation</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">KE4H project: knowledge graphs and LLMs</p>
+      <h1>Colosseum</h1>
+      <p class="abstract">This website combines two KE4H tasks on one topic: the Colosseum. The first part enriches the ArCo knowledge graph with RDF triples. The second part compares how different sources describe and frame the monument.</p>
+      <p class="abstract"><strong>Author:</strong> Iana Voronina.<strong>Professor:</strong> Valentina Presutti.</p>
+    </div>
+  </section>
+
+  <main>
+    <section id="about">
+      <h2>About the Work</h2>
+      <div class="grid">
+        <div class="card"><strong>Student</strong>Iana Voronina</div>
+        <div class="card"><strong>Topic</strong>Colosseum / Anfiteatro Flavio, Rome</div>
+        <div class="card"><strong>Knowledge graph</strong>ArCo, available at <a href="https://dati.cultura.gov.it/sparql">dati.cultura.gov.it/sparql</a></div>
+        <div class="card"><strong>Website output</strong>One GitHub Pages site with Project 1 and Project 2 together</div>
+      </div>
+      <p>The project is organised as a website report with background information, SPARQL exploration, RDF enrichment and a short source-comparison study.</p>
+    </section>
+
+    <section id="colosseum">
+      <h2>Colosseum: the monument of ancient Roman Empire</h2>
+      <p>The Colosseum is also called the Flavian Amphitheatre. It is one of the most famous monuments in Rome and one of the best known symbols of ancient Roman culture.</p>
+      <p>According to <a href="https://en.wikipedia.org/wiki/Colosseum">Wikipedia</a>, the Colosseum is an elliptical amphitheatre in the centre of Rome, near the Roman Forum. It is described as the largest ancient amphitheatre ever built and the largest standing amphitheatre in the world.</p>
+      <p>Construction began under Emperor Vespasian around AD 70-72 and was completed under Titus in AD 80. Later changes were made under Domitian. The monument is connected with the Flavian dynasty, which explains the name "Flavian Amphitheatre".</p>
+      <p>Wikipedia also describes the main materials as travertine limestone, tuff and brick-faced Roman concrete. The amphitheatre could hold tens of thousands of spectators and was used for gladiatorial contests, animal hunts, public spectacles, executions, re-enactments of battles and mythological dramas.</p>
+      <p>In the medieval period the building was no longer used as an entertainment arena. It was later reused for housing, workshops, religious purposes, as a fortress, as a quarry and as a Christian shrine. These historical details are useful because they show what kind of knowledge can enrich the RDF description of the monument.</p>
+    </section>
+
+    <section id="gallery">
+      <h2>Colosseum from different angles</h2>
+      <p>These images show the Colosseum from different perspectives: the exterior, the interior arena and the monument as part of the modern city.</p>
+      <div class="photo-grid">
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Colosseo%202020.jpg" alt="Exterior view of the Colosseum in Rome">
+          <figcaption>Exterior view of the Colosseum.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Colosseum%2C_Eastern_Interior.jpg/1280px-Colosseum%2C_Eastern_Interior.jpg" alt="Interior of the Colosseum with the arena and hypogeum">
+          <figcaption>Interior view with the arena and hypogeum.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Rom_Colosseum_Sept_2021_3.jpg/1280px-Rom_Colosseum_Sept_2021_3.jpg" alt="Aerial view of the Colosseum">
+          <figcaption>Aerial view of the monument.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="project1">
+      <h2>Project 1: Enriching a Knowledge Graph</h2>
+      <p>The goal of Project 1 is to explore a knowledge graph with SPARQL, find a missing or weak description, and propose new RDF triples that could enrich the graph.</p>
+      <p>The ArCo search identified resources connected with "Colosseo", including this site resource:</p>
+      <p><code>https://w3id.org/arco/resource/Site/7982fa371295ec533db6c4dce3fc879a</code></p>
+      <p>This resource is useful because it is labelled "Anfiteatro Flavio-Colosseo", but its RDF description is quite small. It mainly has a type, a label/name and an address. It does not include many facts about the monument itself.</p>
+      <div class="image-text">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg" alt="Colosseum exterior arches">
+        <div>
+          <h3>Why this gap matters</h3>
+          <p>The monument has rich historical, architectural and heritage information, but the selected ArCo site resource contains only a minimal description. Adding verified triples makes the resource more useful for search, linking and comparison with other cultural heritage data.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="card"><strong>Gap found</strong>The ArCo site resource exists, but the description is minimal.</div>
+        <div class="card"><strong>Useful enrichment</strong>Alternative names, external links, materials, coordinates, heritage status and provenance.</div>
+        <div class="card"><strong>Verification</strong>Facts were checked with ArCo, Wikidata, Wikipedia, UNESCO and the official Colosseum website.</div>
+      </div>
+    </section>
+
+    <section id="sparql">
+      <h2>SPARQL Queries</h2>
+      <p>The following ArCo queries were used to find the Colosseum resource and understand what information is missing. Together they include all required SPARQL keywords.</p>
+
+      <h3>Q1. Search Colosseum resources</h3>
+      <div class="result"><pre><code>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT DISTINCT ?resource ?label WHERE {
+  ?resource rdfs:label ?label .
+  ?label bif:contains "'Colosseo'" .
+  FILTER(REGEX(STR(?label), "Colosseo", "i"))
+}
+ORDER BY ?label
+LIMIT 10</code></pre></div>
+      <p>Example result: the query returns several Colosseum-related records, including the site resource labelled "Anfiteatro Flavio-Colosseo".</p>
+
+      <h3>Q2. Inspect the selected site</h3>
+      <div class="result"><pre><code>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT DISTINCT ?property ?value ?valueLabel WHERE {
+  &lt;https://w3id.org/arco/resource/Site/7982fa371295ec533db6c4dce3fc879a&gt; ?property ?value .
+  OPTIONAL { ?value rdfs:label ?valueLabel . }
+}
+ORDER BY ?property
+LIMIT 20</code></pre></div>
+      <p>Example result: the resource has a type, a label/name and an address. This confirms that the description is present, but not very rich.</p>
+
+      <h3>Q3. Compare two names of the monument</h3>
+      <div class="result"><pre><code>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT DISTINCT ?resource ?label WHERE {
+  {
+    ?resource rdfs:label ?label .
+    ?label bif:contains "'Colosseo'" .
+  }
+  UNION
+  {
+    ?resource rdfs:label ?label .
+    ?label bif:contains "'Anfiteatro Flavio'" .
+  }
+  FILTER(REGEX(STR(?label), "Colosseo|Anfiteatro Flavio", "i"))
+}
+ORDER BY ?label
+LIMIT 15</code></pre></div>
+      <p>Example result: many returned records are photographs, titles or subject labels. This helped identify the gap: ArCo mentions the Colosseum often, but the selected site resource still needs a richer description.</p>
+    </section>
+
+    <section id="rdf">
+      <h2>RDF Triples Proposed</h2>
+      <p>The full RDF proposal is stored in <a href="enriched_colosseum.ttl">enriched_colosseum.ttl</a>. The main idea is to enrich the existing ArCo site resource instead of creating a totally separate record.</p>
+      <div class="result"><pre><code>&lt;https://w3id.org/arco/resource/Site/7982fa371295ec533db6c4dce3fc879a&gt;
+  skos:altLabel "Flavian Amphitheatre"@en, "Anfiteatro Flavio"@it ;
+  owl:sameAs &lt;http://www.wikidata.org/entity/Q10285&gt; ;
+  a-loc:hasSiteType ex:RomanAmphitheatre ;
+  a-dd:hasMaterial ex:RomanTravertine, ex:Tuff, ex:RomanConcrete ;
+  schema:geo ex:ColosseumGeometry ;
+  schema:isPartOf &lt;https://whc.unesco.org/en/list/91/&gt; ;
+  prov:wasDerivedFrom &lt;https://dati.cultura.gov.it/sparql&gt; .</code></pre></div>
+      <p>A small RDFS extension, <code>ex:hasHeritageRecognition</code>, is also proposed to express heritage recognition with provenance.</p>
+    </section>
+
+    <section id="project2">
+      <h2>Project 2: Source and Narrative Analysis</h2>
+      <p>Project 2 uses knowledge graphs and LLMs to compare how the same topic is described by different sources. This part keeps the same topic, the Colosseum, and compares the way different sources frame it.</p>
+      <p>The comparison is based on sources that can be checked online: Wikipedia, the official Colosseum park page, UNESCO, ArCo and Wikidata.</p>
+      <div class="image-text reverse">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Colosseum_and_Arch_of_Constantine_seen_from_Palatine.jpg/960px-Colosseum_and_Arch_of_Constantine_seen_from_Palatine.jpg" alt="Panoramic view of the Colosseum and the Arch of Constantine">
+        <div>
+          <h3>Narrative focus</h3>
+          <p>The same monument can be presented as an architectural achievement, a place of ancient spectacles, a protected heritage site or a modern tourist destination. Project 2 compares these frames.</p>
+        </div>
+      </div>
+
+      <h3>Research questions</h3>
+      <div class="grid">
+        <div class="card"><strong>RQ1</strong>Is the Colosseum described mainly as architecture, entertainment, world heritage or tourist attraction?</div>
+        <div class="card"><strong>RQ2</strong>Which actors are mentioned: emperors, spectators, tourists, institutions or conservation authorities?</div>
+        <div class="card"><strong>RQ3</strong>Does adding KG triples help make LLM answers more factual?</div>
+      </div>
+
+      <h3>Comparison of sources</h3>
+      <table>
+        <thead>
+          <tr><th>Source</th><th>Main framing</th><th>Typical entities</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Wikipedia</td><td>Historical and encyclopedic: construction, materials, capacity, uses and later reuse.</td><td>Vespasian, Titus, Domitian, spectators, gladiators, Roman Empire.</td></tr>
+          <tr><td>Official Colosseum Park</td><td>Institutional and visitor-oriented: monument, architecture, exhibitions and access.</td><td>Visitors, the Park, the monument, Rome.</td></tr>
+          <tr><td>UNESCO</td><td>Heritage framing: Rome as a layered historical city and world heritage property.</td><td>Historic Centre of Rome, conservation, world heritage.</td></tr>
+          <tr><td>ArCo / Wikidata</td><td>Structured factual framing: identifiers, type, materials, coordinates and heritage status.</td><td>Site, material, geometry, heritage recognition.</td></tr>
+        </tbody>
+      </table>
+
+      <h3 id="llms">Prompting Techniques and LLM Comparison</h3>
+      <p>The same topic was tested with three prompting techniques. The prompts were written so that the model had to stay close to the evidence from ArCo, Wikidata and the textual sources.</p>
+      <table>
+        <thead>
+          <tr><th>Technique</th><th>Prompt</th><th>Example result</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Zero-shot</td><td>Describe how the Colosseum is represented in ArCo and suggest possible RDF triples for enrichment.</td><td>The model suggested useful facts, but some property names needed checking.</td></tr>
+          <tr><td>Few-shot</td><td>Example: if a monument has a material, model it with <code>a-dd:hasMaterial</code>. Now suggest triples for the Colosseum.</td><td>The model followed the example and produced triples closer to the chosen vocabulary.</td></tr>
+          <tr><td>Grounded / RAG</td><td>Use only the ArCo query results, the RDF triples and the source excerpts. Mark each claim as supported by KG, text, or both.</td><td>This gave the most reliable answer because unsupported claims were easier to notice.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Comparison of two language models</h3>
+      <table>
+        <thead>
+          <tr><th>Model</th><th>Observed behaviour</th><th>Evaluation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ChatGPT</td><td>Produced clearer explanations and connected the RDF triples with the narrative comparison.</td><td>Good for writing and interpretation, but still needed fact-checking.</td></tr>
+          <tr><td>Gemini</td><td>Gave shorter answers and was useful for summarising the difference between sources.</td><td>Good for concise summaries, but less detailed in RDF vocabulary choices.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="evaluation">
+      <h2>Evaluation and Conclusion</h2>
+      <p>The KG-only approach is very factual, but it does not explain the narrative very deeply. The text-only LLM approach gives a better explanation, but it can add claims that are not directly supported. The hybrid approach is the best for this work because RDF triples keep the answer grounded, while the LLM helps compare the sources.</p>
+      <p class="callout">Final conclusion: the Colosseum is present in ArCo, but the selected site resource can be enriched with more useful RDF triples. For narrative analysis, the same verified triples can help make LLM answers more reliable.</p>
+    </section>
+
+
+    <section id="sources">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://dati.cultura.gov.it/sparql">ArCo SPARQL endpoint</a></li>
+        <li><a href="http://wit.istc.cnr.it/arco/">ArCo ontology documentation</a></li>
+        <li><a href="https://www.wikidata.org/wiki/Q10285">Wikidata: Colosseum (Q10285)</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Colosseum">Wikipedia: Colosseum</a></li>
+        <li><a href="https://colosseo.it/en/area/the-colosseum/">Official Colosseum Archaeological Park page</a></li>
+        <li><a href="https://whc.unesco.org/en/list/91/">UNESCO World Heritage: Historic Centre of Rome</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Prepared by Iana Voronina for KE4H.</p>
+  </footer>
+</body>
+</html>
