@@ -1,0 +1,54 @@
+﻿@prefix ex: <https://example.org/ke4h/colosseum/> .
+@prefix a-dd: <https://w3id.org/arco/ontology/denotative-description/> .
+@prefix a-loc: <https://w3id.org/arco/ontology/location/> .
+@prefix cis: <http://dati.beniculturali.it/cis/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/arco/resource/Site/7982fa371295ec533db6c4dce3fc879a>
+    a cis:Site ;
+    rdfs:label "Anfiteatro Flavio-Colosseo"@it, "Colosseum"@en ;
+    l0:name "Anfiteatro Flavio-Colosseo"@it ;
+    skos:altLabel "Flavian Amphitheatre"@en, "Anfiteatro Flavio"@it ;
+    owl:sameAs <http://www.wikidata.org/entity/Q10285>, <http://dbpedia.org/resource/Colosseum> ;
+    a-loc:hasSiteType ex:RomanAmphitheatre ;
+    a-dd:hasMaterial ex:RomanTravertine, ex:Tuff, ex:RomanConcrete ;
+    schema:containedInPlace <http://www.wikidata.org/entity/Q108436146> ;
+    schema:temporalCoverage "0070/0082" ;
+    schema:geo ex:ColosseumGeometry ;
+    schema:isPartOf <https://whc.unesco.org/en/list/91/> ;
+    schema:heritageDesignation "Italian national heritage"@en ;
+    prov:wasDerivedFrom <https://dati.cultura.gov.it/sparql>, <http://www.wikidata.org/entity/Q10285>, <https://colosseo.it/en/area/the-colosseum/>, <https://whc.unesco.org/en/list/91/> ;
+    ex:hasHeritageRecognition ex:ItalianNationalHeritageRecognition .
+
+ex:ColosseumGeometry a clv:Geometry ;
+    rdfs:label "Geographical coordinates of the Colosseum"@en ;
+    clv:lat "41.890277777"^^xsd:decimal ;
+    clv:long "12.492222222"^^xsd:decimal ;
+    schema:geoMidpoint "POINT(12.492222222 41.890277777)" .
+
+ex:RomanAmphitheatre a skos:Concept ;
+    rdfs:label "Roman amphitheatre"@en, "anfiteatro romano"@it ;
+    skos:broader ex:Amphitheatre .
+
+ex:Amphitheatre a skos:Concept ; rdfs:label "amphitheatre"@en, "anfiteatro"@it .
+ex:RomanTravertine a a-dd:TechnicalCharacteristic ; rdfs:label "Roman travertine"@en ; owl:sameAs <http://www.wikidata.org/entity/Q1124525> .
+ex:Tuff a a-dd:TechnicalCharacteristic ; rdfs:label "tuff"@en ; owl:sameAs <http://www.wikidata.org/entity/Q484924> .
+ex:RomanConcrete a a-dd:TechnicalCharacteristic ; rdfs:label "Roman concrete"@en ; owl:sameAs <http://www.wikidata.org/entity/Q22657> .
+
+ex:hasHeritageRecognition a rdf:Property ;
+    rdfs:label "has heritage recognition"@en ;
+    rdfs:comment "Relates a cultural site to a formally stated heritage recognition, with provenance."@en ;
+    rdfs:domain cis:Site ;
+    rdfs:range rdfs:Resource .
+
+ex:ItalianNationalHeritageRecognition a rdfs:Resource ;
+    rdfs:label "Italian national heritage"@en ;
+    owl:sameAs <http://www.wikidata.org/entity/Q26971668> .

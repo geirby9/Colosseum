@@ -1,0 +1,303 @@
+:root {
+  --ink: #1f2421;
+  --muted: #66706a;
+  --paper: #f3efe7;
+  --panel: #fffdf8;
+  --line: #d6cabb;
+  --clay: #9f4c37;
+  --stone: #d8c6ad;
+  --dark: #20231f;
+  --code: #16221e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--clay);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 5vw;
+  border-bottom: 1px solid rgba(31, 36, 33, 0.18);
+  background: rgba(243, 239, 231, 0.96);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 800;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.menu a {
+  padding: 6px 9px;
+  border-radius: 6px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background: var(--stone);
+}
+
+.hero {
+  min-height: 82vh;
+  display: grid;
+  align-items: end;
+  padding: 16vh 5vw 8vh;
+  color: #fff;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.76)),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Colosseo%202020.jpg") center / cover;
+}
+
+.hero-inner {
+  max-width: 930px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #f4d6a6;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 850px;
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6.4rem);
+  line-height: 0.95;
+}
+
+.abstract {
+  max-width: 760px;
+  margin: 22px 0 0;
+  font-size: clamp(1rem, 2vw, 1.24rem);
+}
+
+main {
+  padding: 0 5vw 58px;
+}
+
+section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 58px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+h2 {
+  margin: 0 0 18px;
+  color: var(--dark);
+  font-size: clamp(1.8rem, 3vw, 2.55rem);
+  line-height: 1.12;
+}
+
+h3 {
+  margin: 28px 0 10px;
+  font-size: 1.12rem;
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 12px 30px rgba(35, 31, 25, 0.06);
+}
+
+.card strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--clay);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+figure img,
+.image-text img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+figure img {
+  height: 260px;
+}
+
+figcaption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.image-text {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) 1.1fr;
+  gap: 22px;
+  align-items: center;
+  margin: 24px 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ebe2d4;
+}
+
+.image-text.reverse {
+  grid-template-columns: 1.1fr minmax(260px, 0.9fr);
+}
+
+.image-text.reverse img {
+  order: 2;
+}
+
+.image-text img {
+  height: 280px;
+  border-radius: 6px;
+}
+
+.result {
+  overflow: auto;
+  margin: 16px 0 22px;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--code);
+  color: #edf7f0;
+}
+
+pre {
+  overflow: auto;
+  margin: 0;
+  white-space: pre;
+}
+
+code {
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 0.88rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  background: var(--panel);
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #e2d5c3;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.callout {
+  padding: 18px;
+  border-left: 5px solid var(--clay);
+  background: #fff7e9;
+}
+
+.footer {
+  padding: 24px 5vw 40px;
+  color: var(--muted);
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .photo-grid,
+  .image-text,
+  .image-text.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .image-text.reverse img {
+    order: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    min-height: 74vh;
+    padding-top: 12vh;
+  }
+
+  section {
+    padding: 42px 0;
+  }
+
+  figure img,
+  .image-text img {
+    height: 220px;
+  }
+}
